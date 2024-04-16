@@ -18,7 +18,10 @@ pip install -r requirements.txt
 
 ### Please also modify the path for MNIST data if needed:
 
+##### i.e. PySpark can directly read .csv.tar.gz as spark dataframe for pyspark 2.4.0
+##### i.e. It is recommended to unzip the data.
+
 ```python
-mnist_train = spark.read.options(header = False).schema(schema).csv("your mnist train csv").dropna()
-mnist_test = spark.read.options(header = False).schema(schema).csv("your mnist test csv").dropna()
+mnist_train = spark.read.options(header = False).schema(schema).csv("your-mnist-train.csv.tar.gz").dropna()
+mnist_test = spark.read.options(header = False).schema(schema).csv("your-mnist-test.csv.tar.gz").dropna()
 ```
